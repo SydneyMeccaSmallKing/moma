@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans SC", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-dusk: #1b1533;
+  --color-paper: #fff6ea;
+  --color-ink: #2a2438;
+  --color-sakura: #d4748a;
+  --color-lantern: #e8c07a;
+
+  --color-bg: #1b1533;
+  --color-surface: #fff6ea;
+  --color-fg: #2a2438;
+  --color-muted: #6b5c66;
+  --color-subtle: #8a7a82;
+  --color-primary: #d4748a;
+  --color-primary-fg: #fff6ea;
+  --color-border: #ead7c8;
+  --color-ring: #e8c07a;
+  --color-danger: #8f2e24;
+  --color-warn: #8a5a16;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  --shadow-border:
+    0 0 0 1px rgb(42 36 56 / 0.06),
+    0 8px 24px -12px rgb(27 21 51 / 0.45);
+  --shadow-border-hover:
+    0 0 0 1px rgb(42 36 56 / 0.1),
+    0 12px 28px -12px rgb(27 21 51 / 0.5);
+
+  --tracking-display: 0.04em;
+  --tracking-mark: 0.22em;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-dusk);
+    color: var(--color-paper);
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-dusk);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgb(212 116 138 / 0.28);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
